@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { DriveFolderButton } from '../components/Bits'
-import { OutcomeBadge, roundLabel } from '../components/MatchRow'
+import { roundLabel } from '../components/MatchRow'
 import { Page } from '../components/Page'
 import { Async, Empty } from '../components/States'
 import { usePlayVideo } from '../components/VideoModal'
@@ -48,7 +48,7 @@ function Detail({ m, base, all }: { m: M; base: Base; all: MatchSummary[] }) {
 
   return (
     <>
-      <section className="card scoreboard" aria-label="Resultado">
+      <section className={`card scoreboard${m.outcome ? ` o-${m.outcome}` : ''}`} aria-label="Resultado">
         <p className="muted small center">
           {tour ? <Link to={`/torneos/${tour.id}`}>{tour.name}</Link> : circuit?.name}
           {roundLabel(m) && ` · ${roundLabel(m)}`}
@@ -65,7 +65,6 @@ function Detail({ m, base, all }: { m: M; base: Base; all: MatchSummary[] }) {
           </span>
         </div>
         <p className="center scoreboard-outcome">
-          <span aria-hidden="true"><OutcomeBadge outcome={m.outcome} /></span>
           <span>{m.outcome ? OUTCOME_LABEL[m.outcome] : 'Resultado sin dato'}</span>
         </p>
         {(m.goalsFor == null || m.goalsAgainst == null) && (

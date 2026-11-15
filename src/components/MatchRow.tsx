@@ -34,8 +34,7 @@ export function MatchRow({ m, base, showTournament = true }: { m: MatchSummary; 
     .join(' · ')
   return (
     <li>
-      <Link to={`/partidos/${m.id}`} className="row match-row">
-        <OutcomeBadge outcome={m.outcome} />
+      <Link to={`/partidos/${m.id}`} className={`row match-row${m.outcome ? ` o-${m.outcome}` : ''}`}>
         <span className="row-main">
           <span className="match-row-rival">{rival}</span>
           <span className="muted small tabular">
@@ -44,7 +43,17 @@ export function MatchRow({ m, base, showTournament = true }: { m: MatchSummary; 
           </span>
         </span>
         <span className="match-row-end">
-          <span className="match-row-score tabular">{formatScore(m.goalsFor, m.goalsAgainst)}</span>
+          <span className="match-row-score tabular">
+            {formatScore(m.goalsFor, m.goalsAgainst)}
+            {m.outcome ? (
+              <span className={`match-row-outcome o-${m.outcome}`} title={OUTCOME_LABEL[m.outcome]}>
+                <span aria-hidden="true">{OUTCOME_SHORT[m.outcome]}</span>
+                <span className="visually-hidden">{OUTCOME_LABEL[m.outcome]}</span>
+              </span>
+            ) : (
+              <span className="match-row-outcome muted" title="Resultado sin dato">–</span>
+            )}
+          </span>
           <span className="match-row-icons" aria-hidden="true">
             {m.videoGoals > 0 && <span title="Goles en video">▶</span>}
             {m.hasMedia && <span title="Fotos y videos">📷</span>}

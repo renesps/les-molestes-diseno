@@ -9,10 +9,10 @@ export function RecordCard({ r, title }: { r: Record; title?: string }) {
     <div className="card">
       {title && <p className="card-label">{title}</p>}
       <dl className="record tabular">
-        <div><dt>PJ</dt><dd>{r.played}</dd></div>
-        <div className="win"><dt>G</dt><dd>{r.won}</dd></div>
-        <div className="draw"><dt>E</dt><dd>{r.drawn}</dd></div>
-        <div className="loss"><dt>P</dt><dd>{r.lost}</dd></div>
+        <div><dt>Jugados</dt><dd>{r.played}</dd></div>
+        <div className="win"><dt>Ganados</dt><dd>{r.won}</dd></div>
+        <div className="draw"><dt>Empatados</dt><dd>{r.drawn}</dd></div>
+        <div className="loss"><dt>Perdidos</dt><dd>{r.lost}</dd></div>
       </dl>
       <p className="record-goals tabular">
         <span>{r.goalsFor} a favor</span>
