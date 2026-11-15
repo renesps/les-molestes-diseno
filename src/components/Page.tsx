@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { IconBack } from './Icons'
 
 const CLUB = 'Club Social y Deportivo Les Molestes'
+const SITE = 'Les Molestes (diseño)'
 
 interface Props {
   title: string
@@ -18,7 +19,7 @@ interface Props {
 export function Page({ title, back, eyebrow, hideTitle, children }: Props) {
   const navigate = useNavigate()
   useEffect(() => {
-    document.title = title === CLUB ? CLUB : `${title} · Les Molestes`
+    document.title = title === CLUB ? SITE : `${title} · ${SITE}`
   }, [title])
 
   return (
