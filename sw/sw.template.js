@@ -5,7 +5,7 @@
  * - Nunca toca Google Drive ni otros sitios (los videos/fotos necesitan conexión).
  */
 const VERSION = '__VERSION__'
-const CACHE = `les-molestes-${VERSION}`
+const CACHE = `lmdiseno-${VERSION}`
 const PRECACHE = __PRECACHE__
 // ignoreVary: algunos servidores mandan "Vary: Origin" y los scripts de módulo se piden con Origin;
 // sin esto, lo guardado no coincidiría y la app no arrancaría sin conexión.
@@ -20,7 +20,7 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k.startsWith('les-molestes-') && k !== CACHE).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(keys.filter((k) => k.startsWith('lmdiseno-') && k !== CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim()),
   )
 })

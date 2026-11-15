@@ -150,7 +150,7 @@ try {
   const cached = await page.evaluate(async () => {
     const reg = await navigator.serviceWorker.ready
     const keys = await caches.keys()
-    const c = await caches.open(keys.find((k) => k.startsWith('les-molestes-')))
+    const c = await caches.open(keys.find((k) => k.startsWith('lmdiseno-')))
     return { active: !!reg.active, files: (await c.keys()).length }
   })
   console.log(`  · service worker activo: ${cached.active}, archivos guardados: ${cached.files}`)
