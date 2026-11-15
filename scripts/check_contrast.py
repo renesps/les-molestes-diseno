@@ -26,6 +26,9 @@ PAIRS = [
     ("--win", "--win-container", 4.5), ("--draw", "--draw-container", 4.5), ("--loss", "--loss-container", 4.5),
     ("--on-result", "--win", 4.5), ("--on-result", "--draw", 4.5), ("--on-result", "--loss", 4.5),
     ("--focus-ring", "--surface", 3.0), ("--focus-ring", "--background", 3.0),
+    ("--tab-fg", "--tab-bg", 4.5), ("--tab-fg-active", "--tab-bg", 4.5),
+    ("--score-fg", "--score-bg", 4.5), ("--score-fg-secondary", "--score-bg", 4.5),
+    ("--on-brand-celeste", "--brand-celeste", 4.5),
 ]
 
 

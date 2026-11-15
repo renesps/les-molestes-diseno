@@ -42,6 +42,16 @@
   --on-ink: #FFFFFF;
   --on-ink-secondary: #A6BCCB;
 
+  /* Barra de pestañas y marcador: celeste del escudo */
+  --tab-bg: #5FBDF5;
+  --tab-fg: #0A3D5C;
+  --tab-fg-active: #0B2A40;
+  --tab-indicator: #0B2A40;
+  --score-bg: #5FBDF5;
+  --score-fg: #0B2A40;
+  --score-fg-secondary: #0A3D5C;
+  --score-win: #0B2A40;
+
   /* Resultados (texto) */
   --win: #1B7A3A;
   --win-container: #E2F4E8;
@@ -56,10 +66,11 @@
   --stripe-draw: #9A7A36;
   --stripe-loss: #D2483F;
 
-  /* Tipografía: Avenir Next (viene con el iPhone). Condensada para cifras y títulos. */
+  /* Tipografía: Avenir Next (viene con el iPhone) para texto; condensada para cifras. */
   --font-sans: "Avenir Next", "Avenir", "Segoe UI", Roboto, system-ui, sans-serif;
   --font-cond: "Avenir Next Condensed", "Roboto Condensed", "Arial Narrow", "sans-serif-condensed", var(--font-sans);
-  --font-display: var(--font-cond);
+  /* Serif para títulos, en el espíritu de las letras de la banda del escudo (en iPhone: New York) */
+  --font-display: ui-serif, "New York", Georgia, "Times New Roman", serif;
 
   /* Escala modular 1.25 sobre 17 px */
   --text-xs: 0.8125rem;   /* 13 */
@@ -116,6 +127,15 @@
     --on-ink: #FFFFFF;
     --on-ink-secondary: #9DB6C8;
 
+    --tab-bg: #051824;
+    --tab-fg: #9DB6C8;
+    --tab-fg-active: #FFFFFF;
+    --tab-indicator: #5FBDF5;
+    --score-bg: #051824;
+    --score-fg: #FFFFFF;
+    --score-fg-secondary: #9DB6C8;
+    --score-win: #5FBDF5;
+
     --win: #5FCB82;
     --win-container: #123526;
     --draw: #AEB7C0;
@@ -131,4 +151,4 @@
 }
 
 .tabular { font-variant-numeric: tabular-nums; }
-.display { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.005em; }
+.display { font-family: var(--font-display); font-weight: 700; letter-spacing: 0; }
